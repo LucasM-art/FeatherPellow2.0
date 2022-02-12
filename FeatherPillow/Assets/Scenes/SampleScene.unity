@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 98920681}
   - component: {fileID: 98920680}
   - component: {fileID: 98920679}
+  - component: {fileID: 98920683}
   m_Layer: 6
   m_Name: Candle
   m_TagString: Candle
@@ -462,6 +463,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98920683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98920678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b119a97ead7424ead88815dc8f832b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire: {fileID: 1557217068}
 --- !u!1 &148218760
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +921,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278286664}
   m_CullTransparentMesh: 1
+--- !u!1 &287780998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 287780999}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &287780999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287780998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.455, y: 1.125, z: -0.637}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7747188087908408316}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301088064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7516,7 +7560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7747188087908408316}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!4 &7746935218150286518
 Transform:
@@ -7530,7 +7574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 7747188087908408316}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7747188087908408316
 Transform:
@@ -7543,6 +7587,7 @@ Transform:
   m_LocalPosition: {x: 862.25183, y: 538.6702, z: -49.525707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 287780999}
   - {fileID: 7746908078912224284}
   - {fileID: 7746935218150286518}
   - {fileID: 7754509383058385456}
@@ -7675,6 +7720,7 @@ GameObject:
   - component: {fileID: 7644040690952937928}
   - component: {fileID: 7645915020516484144}
   - component: {fileID: 7645651465928734746}
+  - component: {fileID: 7749345986948530261}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7682,6 +7728,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7749345986948530261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749345986948530260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c30b5050ff104b953fbfa56f61fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ray: {fileID: 7748673487249143138}
+  candle: {fileID: 98920678}
+  hand: {fileID: 287780999}
+  lighters: 0
 --- !u!82 &7749982508134136466
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7826,7 +7888,7 @@ Transform:
   - {fileID: 8874845453935674164}
   - {fileID: 1681683872348387634}
   m_Father: {fileID: 7747188087908408316}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7749982509516897611
 MonoBehaviour:
@@ -7897,7 +7959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7747188087908408316}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7765863555849762126
 Camera:
