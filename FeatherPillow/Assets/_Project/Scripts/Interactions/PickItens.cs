@@ -7,10 +7,12 @@ public class PickItens : MonoBehaviour
     [SerializeField] private Raycast ray;
 
     [Header("Itens to instantiate")]
-    [SerializeField] private GameObject candle;
+    [SerializeField] private GameObject candleNormal;
+    [SerializeField] private GameObject candleLit;
     [SerializeField] private Transform hand;
 
     public int lighters = 0;
+    public bool fireOn;
 
     private void Update()
     {
@@ -19,7 +21,15 @@ public class PickItens : MonoBehaviour
             if (ray.isCandle)
             {
                 Destroy(ray.raycastedObject);
-                Instantiate(candle, hand.position, hand.rotation, hand);
+
+                if (fireOn)
+                {
+                    Instantiate(candleLit, hand.position, hand.rotation, hand);
+                }
+                else
+                {
+                    Instantiate(candleNormal, hand.position, hand.rotation, hand);
+                }
             }
 
             if (ray.isLighter)

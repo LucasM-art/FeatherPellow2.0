@@ -10,8 +10,6 @@ public class LightCandle : MonoBehaviour
     private void Start()
     {
         _item = GameObject.Find("Player").GetComponent<PickItens>();
-
-        fire.SetActive(false);
     }
 
     private void Update()
@@ -22,6 +20,7 @@ public class LightCandle : MonoBehaviour
             {
                 fire.SetActive(true);
                 _item.lighters--;
+                _item.fireOn = true;
             }
         }
         else

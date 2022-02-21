@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMenu : MonoBehaviour
 {
-    //[SerializeField] private PickItens item;
+    [SerializeField] private PickItens item;
     [SerializeField] private PauseMenu pause;
     [SerializeField] private GameObject gameHud;
 
@@ -64,34 +64,43 @@ public class PlayerMenu : MonoBehaviour
                 Back();
             }
         }
+
+        if (item.lighters > 0)
+        {
+            slots[0].SetActive(true);
+        }
+        else
+        {
+            slots[0].SetActive(false);
+        }
     }
 
     public void ChangePageForward()
     {
-        if (_currentMenu < 4)
+        if (_currentMenu >= 3)
+        {
+            _currentMenu = 3;
+            menus[_currentMenu].SetActive(true);
+        }
+        else
         {
             menus[_currentMenu].SetActive(false);
             _currentMenu++;
-            menus[_currentMenu].SetActive(true);
-        }
-        else if (_currentMenu == 3)
-        {
-            _currentMenu = 3;
             menus[_currentMenu].SetActive(true);
         }
     }
 
     public void ChangePageBackward()
     {
-        if (_currentMenu > 0)
+        if(_currentMenu <= 0)
+        {
+            _currentMenu = 0;
+            menus[0].SetActive(true);
+        }
+        else
         {
             menus[_currentMenu].SetActive(false);
             _currentMenu--;
-            menus[_currentMenu].SetActive(true);
-        }
-        else if (_currentMenu == 0)
-        {
-            _currentMenu = 0;
             menus[_currentMenu].SetActive(true);
         }
     }

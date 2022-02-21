@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Candle
   - Lighter
+  - Wind
+  - Fire
   layers:
   - Default
   - TransparentFX
